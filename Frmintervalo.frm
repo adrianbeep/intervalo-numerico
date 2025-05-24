@@ -358,6 +358,7 @@ Private Sub cmdrei_Click()
     Form_Load
     Form_Activate
     
+    lblintervalo.Caption = ""
     txtnum1.Text = ""
     txtnum2.Text = ""
     txtnum3.Text = ""
@@ -365,7 +366,7 @@ End Sub
 Private Sub cmdreiniciar_Click()
     Form_Load
     Form_Activate
-    
+
     cmdnum3.Enabled = True
     cmdnum3.TabStop = True
     cmdcalc.Enabled = False
@@ -392,4 +393,19 @@ Private Sub Form_Load()
 End Sub
 Private Sub Form_Unload(Cancel As Integer)
     Set Frmintervalo = Nothing
+End Sub
+Private Sub txtnum1_KeyPress(KeyAscii As Integer)
+    If ((KeyAscii < 48 Or KeyAscii > 57) And KeyAscii <> 8 And KeyAscii <> 45) Then
+        KeyAscii = 0
+    End If
+End Sub
+Private Sub txtnum2_KeyPress(KeyAscii As Integer)
+    If ((KeyAscii < 48 Or KeyAscii > 57) And KeyAscii <> 8 And KeyAscii <> 45) Then
+        KeyAscii = 0
+    End If
+End Sub
+Private Sub txtnum3_KeyPress(KeyAscii As Integer)
+    If ((KeyAscii < 48 Or KeyAscii > 57) And KeyAscii <> 8 And KeyAscii <> 45) Then
+        KeyAscii = 0
+    End If
 End Sub
